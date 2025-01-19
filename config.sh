@@ -1,5 +1,9 @@
 # Configuration file for the docker image
 
+# Conda environment name and Python version
+ENVNAME=cuda
+PYTHON_VERSION=3.12
+
 # Username and password for the user in the container
 USERNAME=$(whoami)
 PASSWORD=${USERNAME}
@@ -9,10 +13,6 @@ PASSWORD=${USERNAME}
 # This is useful for sharing files between the host and the container.
 HOST_UID=$(id -u)
 HOST_GID=$(id -g)
-
-# Conda environment name and Python version
-ENVNAME=cuda
-PYTHON_VERSION=3.12
 
 # Miniforge installer
 MINIFORGE_INSTALLER=Miniforge3-$(uname)-$(uname -m).sh
