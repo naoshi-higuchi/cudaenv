@@ -22,6 +22,8 @@ Modify `cudaenv/config.sh` if needed.
 ```sh
 vim config.sh
 ```
+> [!TIP]
+> Edit `ENVNAME` and `PYTHON_VERSION` for your conda environment.
 
 ### Build your Docker image
 
@@ -32,12 +34,12 @@ sh docker_build.sh
 ### Modify run.sh
 Modify `cudaenv/run.sh` if needed.
 
-> [!TIP]
-> Edit `WORKDIR` and `VOLUME_MOUNT` for your convenience.
-
 ```sh
 vim run.sh
 ```
+
+> [!TIP]
+> Edit `WORKDIR` and `VOLUME_MOUNT` for sharing files between the host and the container.
 
 ## Usage
 
