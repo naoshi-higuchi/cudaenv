@@ -7,6 +7,9 @@ cd ${DIR}
 
 docker build \
   --build-arg USERNAME=${USERNAME} \
+  --build-arg PASSWORD=${PASSWORD} \
+  --build-arg HOST_UID=${HOST_UID} \
+  --build-arg HOST_GID=${HOST_GID} \
   --build-arg ENVNAME=${ENVNAME} \
   --build-arg PYTHON_VERSION=${PYTHON_VERSION} \
   --build-arg MINIFORGE_INSTALLER=${MINIFORGE_INSTALLER} \
