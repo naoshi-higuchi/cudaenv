@@ -8,7 +8,7 @@ cudaenv makes it easy to set up a Docker environment with CUDA and Miniconda (Mi
 ### Clone the repository
 
 ```sh
-git clone https://github.com/yourusername/cudaenv.git
+git clone https://github.com/naoshi-higuchi/cudaenv.git
 cd cudaenv
 ```
 
