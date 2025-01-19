@@ -19,5 +19,6 @@ if [ ${HOST_UID} = ${UBUNTU_UID} ]; then
 else
   # Add a new user with the desired username.
   echo "User ID is different from the ubuntu user in the container"
+  groupadd -f -g ${HOST_GID} ${USERNAME}
   useradd -m -u ${HOST_UID} --password ${HASHED_PASSWORD} -g ${HOST_GID} --groups adm,sudo,audio,video ${USERNAME}
 fi
