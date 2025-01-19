@@ -1,8 +1,5 @@
 # Configuration file for the docker image
 
-# Working directory on the host (not in the container)
-WORKDIR="./work"
-
 # Username and password for the user in the container
 USERNAME=$(whoami)
 PASSWORD=${USERNAME}
@@ -12,9 +9,6 @@ PASSWORD=${USERNAME}
 # This is useful for sharing files between the host and the container.
 HOST_UID=$(id -u)
 HOST_GID=$(id -g)
-
-# Volume mount for sharing files between the host and the container
-VOLUME_MOUNT="${WORKDIR}:/home/${USERNAME}/work"
 
 # Conda environment name and Python version
 ENVNAME=cuda
