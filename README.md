@@ -17,16 +17,26 @@ cd cudaenv
 ```
 
 ### Modify config.sh
-Modify cudaenv/config.sh if you need.
+Modify `cudaenv/config.sh` if needed.
 
 ```sh
 vim config.sh
 ```
 
-### Build your docker image
+### Build your Docker image
 
 ```sh
 sh docker_build.sh
+```
+
+### Modify run.sh
+Modify `cudaenv/run.sh` if needed.
+
+[!TIP]
+Edit `WORKDIR` and `VOLUME_MOUNT` for your convenience.
+
+```sh
+vim run.sh
 ```
 
 ## Usage
