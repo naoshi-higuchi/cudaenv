@@ -16,14 +16,14 @@ git clone https://github.com/naoshi-higuchi/cudaenv.git
 cd cudaenv
 ```
 
-### Update config.sh
-Update cudaenv/config.sh for your needs.
+### Modify config.sh
+Modify cudaenv/config.sh if you need.
 
 ```sh
 vim config.sh
 ```
 
-### Build your docker image.
+### Build your docker image
 
 ```sh
 sh docker_build.sh
