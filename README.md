@@ -3,6 +3,10 @@
 ## Description
 cudaenv makes it easy to set up a Docker environment with CUDA and Miniconda (Miniforge3). It handles the installation and configuration, so you can focus on developing and running your CUDA applications.
 
+## Prerequisites
+- Docker
+- NVIDIA Container Toolkit
+
 ## Installation
 
 ### Clone the repository
