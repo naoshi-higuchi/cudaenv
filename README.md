@@ -32,8 +32,8 @@ sh docker_build.sh
 ### Modify run.sh
 Modify `cudaenv/run.sh` if needed.
 
-[!TIP]
-Edit `WORKDIR` and `VOLUME_MOUNT` for your convenience.
+> [!TIP]
+> Edit `WORKDIR` and `VOLUME_MOUNT` for your convenience.
 
 ```sh
 vim run.sh
