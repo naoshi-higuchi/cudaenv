@@ -1,13 +1,18 @@
 FROM nvidia/cuda:12.6.3-cudnn-runtime-ubuntu24.04
 
 RUN apt-get update
-RUN apt-get install -y sudo wget vim
+RUN apt-get install -y sudo wget vim openssh-server
+RUN mkdir /var/run/sshd
+RUN ssh-keygen -A
+EXPOSE 22
 
 ARG USERNAME PASSWORD HOST_UID HOST_GID ENVNAME PYTHON_VERSION MINIFORGE_INSTALLER MINIFORGE_URL
 
 COPY adduser.sh /tmp/adduser.sh
 RUN sh /tmp/adduser.sh $USERNAME $PASSWORD $HOST_UID $HOST_GID
 RUN rm /tmp/adduser.sh
+COPY sshd.sh /home/$USERNAME/sshd.sh
+RUN chmod +x /home/$USERNAME/sshd.sh
 USER $USERNAME
 WORKDIR /home/$USERNAME
 

@@ -12,4 +12,4 @@ WORKDIR="./work"
 # Volume mount for sharing files between the host and the container
 VOLUME_MOUNT="${WORKDIR}:/home/${USERNAME}/work"
 
-docker run -it --rm --gpus all --volume ${VOLUME_MOUNT} --name cudaenv cudaenv/dev:0.1 /bin/bash
+docker run -it --rm -p 2222:22 --gpus all --volume ${VOLUME_MOUNT} --name cudaenv cudaenv/dev:0.1 /bin/bash
