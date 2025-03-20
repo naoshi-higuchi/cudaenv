@@ -11,7 +11,7 @@ ARG USERNAME PASSWORD HOST_UID HOST_GID ENVNAME PYTHON_VERSION MINIFORGE_INSTALL
 COPY .scripts/adduser.sh /tmp/adduser.sh
 RUN sh /tmp/adduser.sh $USERNAME $PASSWORD $HOST_UID $HOST_GID
 RUN rm /tmp/adduser.sh
-COPY sshd.sh /home/$USERNAME/sshd.sh
+COPY .scripts/sshd.sh /home/$USERNAME/sshd.sh
 RUN chmod +x /home/$USERNAME/sshd.sh
 USER $USERNAME
 WORKDIR /home/$USERNAME
