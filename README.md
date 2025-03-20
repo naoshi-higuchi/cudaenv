@@ -46,11 +46,3 @@ vim run.sh
 ```sh
 sh run.sh
 ```
-
-### Run sshd
-
-After `sh run.sh`, kick sshd.sh in the container.
-
-```sh
-sh ./sshd.sh
-```
