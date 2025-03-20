@@ -5,6 +5,9 @@ cd ${DIR}
 
 . ${DIR}/config.sh
 
+export USERNAME
+envsubst < .scripts/entrypoint_template.sh > .scripts/entrypoint.sh
+
 sh .scripts/setup_ssh.sh
 
 docker build \

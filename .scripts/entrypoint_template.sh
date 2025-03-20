@@ -2,4 +2,4 @@
 
 /usr/sbin/sshd -D &
 
-exec su - naoshi
+exec su - ${USERNAME}
