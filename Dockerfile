@@ -15,6 +15,8 @@ COPY .scripts/sshd.sh /home/$USERNAME/sshd.sh
 RUN chmod +x /home/$USERNAME/sshd.sh
 USER $USERNAME
 WORKDIR /home/$USERNAME
+RUN mkdir -p /home/$USERNAME/.ssh
+COPY .ssh_local/id.pub /home/$USERNAME/.ssh/authorized_keys
 
 RUN wget $MINIFORGE_URL
 RUN bash $MINIFORGE_INSTALLER -b -u

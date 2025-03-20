@@ -5,6 +5,8 @@ cd ${DIR}
 
 . ${DIR}/config.sh
 
+sh .scripts/setup_ssh.sh
+
 docker build \
   --build-arg USERNAME=${USERNAME} \
   --build-arg PASSWORD=${PASSWORD} \

@@ -17,3 +17,6 @@ HOST_GID=$(id -g)
 # Miniforge installer
 MINIFORGE_INSTALLER=Miniforge3-$(uname)-$(uname -m).sh
 MINIFORGE_URL=https://github.com/conda-forge/miniforge/releases/latest/download/${MINIFORGE_INSTALLER}
+
+# SSH config
+SSH_PORT=22022
