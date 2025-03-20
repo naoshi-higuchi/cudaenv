@@ -8,7 +8,7 @@ EXPOSE 22
 
 ARG USERNAME PASSWORD HOST_UID HOST_GID ENVNAME PYTHON_VERSION MINIFORGE_INSTALLER MINIFORGE_URL
 
-COPY adduser.sh /tmp/adduser.sh
+COPY .scripts/adduser.sh /tmp/adduser.sh
 RUN sh /tmp/adduser.sh $USERNAME $PASSWORD $HOST_UID $HOST_GID
 RUN rm /tmp/adduser.sh
 COPY sshd.sh /home/$USERNAME/sshd.sh
