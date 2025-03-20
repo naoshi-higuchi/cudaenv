@@ -11,8 +11,7 @@ ARG USERNAME PASSWORD HOST_UID HOST_GID ENVNAME PYTHON_VERSION MINIFORGE_INSTALL
 COPY .scripts/adduser.sh /tmp/adduser.sh
 RUN sh /tmp/adduser.sh $USERNAME $PASSWORD $HOST_UID $HOST_GID
 RUN rm /tmp/adduser.sh
-COPY .scripts/sshd.sh /home/$USERNAME/sshd.sh
-RUN chmod +x /home/$USERNAME/sshd.sh
+
 USER $USERNAME
 WORKDIR /home/$USERNAME
 RUN mkdir -p /home/$USERNAME/.ssh
@@ -31,3 +30,9 @@ RUN mamba clean -i -y
 
 #RUN mamba install -y -n $ENVNAME numpy
 #RUN mamba install -y -v -n $ENVNAME pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+
+USER root
+COPY .scripts/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/bin/bash"]
