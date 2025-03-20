@@ -46,3 +46,9 @@ vim run.sh
 ```sh
 sh run.sh
 ```
+
+## ssh
+
+```sh
+ssh -F .ssh_local/config localhost22022
+```
