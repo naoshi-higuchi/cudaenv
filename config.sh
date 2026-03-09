@@ -1,6 +1,6 @@
 # Configuration file for the docker image
 
-# Conda environment name and Python version
+# uv virtual environment name and Python version
 ENVNAME=cuda
 PYTHON_VERSION=3.12
 
@@ -14,9 +14,9 @@ PASSWORD=${USERNAME}
 HOST_UID=$(id -u)
 HOST_GID=$(id -g)
 
-# Miniforge installer
-MINIFORGE_INSTALLER=Miniforge3-$(uname)-$(uname -m).sh
-MINIFORGE_URL=https://github.com/conda-forge/miniforge/releases/latest/download/${MINIFORGE_INSTALLER}
+# uv installer
+UV_VERSION=v0.4.30
+UV_INSTALL_URL=https://astral.sh/uv/install.sh
 
 # SSH config
 SSH_PORT=22022
