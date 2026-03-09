@@ -1,4 +1,4 @@
-FROM nvidia/cuda:13.1.1-cudnn-runtime-ubuntu24.04
+FROM nvidia/cuda:13.0.2-cudnn-runtime-ubuntu24.04
 
 RUN apt-get update
 RUN apt-get install -y sudo wget vim openssh-server curl && rm -rf /var/lib/apt/lists/*
@@ -17,7 +17,9 @@ WORKDIR /home/$USERNAME
 RUN mkdir -p /home/$USERNAME/.ssh
 COPY .ssh_local/id.pub /home/$USERNAME/.ssh/authorized_keys
 
-RUN wget -qO- $UV_INSTALL_URL | sh -s -- --version $UV_VERSION
+
+RUN wget -qO- $UV_INSTALL_URL | UV_VERSION=$UV_VERSION sh
+
 
 ENV PATH /home/$USERNAME/.local/bin:$PATH
 
@@ -25,7 +27,7 @@ RUN uv python install $PYTHON_VERSION
 RUN mkdir -p /home/$USERNAME/.venvs
 RUN uv venv /home/$USERNAME/.venvs/$ENVNAME --python $PYTHON_VERSION
 RUN echo "source /home/$USERNAME/.venvs/$ENVNAME/bin/activate" >> ~/.bashrc
-RUN uv cache prune --all && rm -rf /home/$USERNAME/.cache/uv
+RUN uv cache prune && rm -rf /home/$USERNAME/.cache/uv
 
 USER root
 COPY .scripts/entrypoint.sh /entrypoint.sh
